@@ -104,6 +104,8 @@ description, read skills/<skill-id>/SKILL.md before starting, and follow it.
 
 Commit that to the repo root (or your home directory for a personal default). It costs nothing and works everywhere.
 
+A ready-made version ships in this repo as [`AGENTS.md`](AGENTS.md) — copy it and adjust.
+
 ### 4. Verify
 
 Restart the harness, then ask for a skill by name:
@@ -133,6 +135,7 @@ One clone plus pointers means `git pull` is the upgrade path for every tool on t
 ```
 spec-driv-dev/
 ├── README.md                  ← you are here
+├── AGENTS.md                  ← harness default rules (copy into any project)
 ├── docs/                      ← the written method (9 guides)
 │   ├── 01-prompt-engineering.md
 │   ├── 02-context-engineering.md
@@ -147,8 +150,9 @@ spec-driv-dev/
 │   └── <skill-id>/
 │       ├── SKILL.md           ← the instructions
 │       └── references/        ← loaded on demand, not always-on
-├── All-about-prompts/         ← original source material (docx/rtf/txt)
-└── frontend_design_styles.docx ← source for the style taxonomy (44 styles)
+├── All-about-prompts/         ← original sources (docx + converted .md)
+│   └── README.md              ← provenance: which raw file became which guide
+└── frontend_design_styles.docx / .md ← source for the style taxonomy (44 styles)
 ```
 
 The skill ID is derived from the **folder name**, not the `name:` field in the frontmatter. Where they differ, the folder wins.
@@ -414,14 +418,67 @@ The method behind the skills, in [`docs/`](docs/README.md):
 
 ## Design resources
 
+### The 29 design links
+
+From the design team's shortcut folder (`Desktop/Design/ui-ux components/`, URLs below and in [`Desktop/Design/ui-ux components/README.md`](../../../Design/ui-ux%20components/README.md)).
+
+**Component libraries — code you copy into a project**
+
+| Site | URL | What it gives you | Free / Paid |
+| --- | --- | --- | --- |
+| 21st | [21st.dev](https://21st.dev) | Community React + Tailwind components and templates, built to be pasted into a real project | Freemium |
+| Animmaster Lib | [animmasterlib.dev](https://animmasterlib.dev) | 300 pro-grade animated components reverse-engineered from top-tier sites: scroll, mouse, page transitions, WebGL | Paid |
+| Lightswind UI | [lightswind.com](https://lightswind.com) | 300+ animated React components, 550+ blocks; open-source core (MIT), pro assets paid | Freemium |
+| Origin UI | [originui.com](https://originui.com) | Clean, unopinionated shadcn-compatible components — the neutral base layer | Free |
+| React Bits | [reactbits.dev](https://reactbits.dev) | Free animated React components: text effects, backgrounds, carousels | Free |
+| Skiper UI | [skiper-ui.com](https://skiper-ui.com) | 100+ uncommon shadcn/ui components as one-file installs, no extra packages | Freemium |
+| Vengeance UI | [vengeanceui.com](https://vengeanceui.com) | Animated, motion-led components with a darker, designed default aesthetic | Freemium |
+| UI8 | [ui8.net](https://ui8.net) | UI kits, design systems, Figma files, 3D/illustration assets | Paid |
+| Vanta.js | [vantajs.com](https://vantajs.com) | Drop-in animated 3D backgrounds (fog, waves, net, birds) via WebGL | Free |
+| Lenis | [lenis.darkroom.engineering](https://lenis.darkroom.engineering) | Smooth-scroll library — the standard behind most "expensive-feeling" scroll | Free |
+| GSAP | [gsap.com](https://gsap.com) | The animation platform: ScrollTrigger, SplitText, timelines | Free |
+| Remotion | [remotion.dev](https://remotion.dev) | Frame-accurate video from React code, renders locally or in CI | Freemium |
+
+**Inspiration galleries — what to show the client**
+
+| Site | URL | What it gives you | Free / Paid |
+| --- | --- | --- | --- |
+| Awwwards | [awwwards.com](https://awwwards.com) | Jury-scored Site of the Day bar for ambition | Free |
+| Dribbble | [dribbble.com](https://dribbble.com) | Shot-level UI, brand and colour ideas; worst case in feasibility | Freemium |
+| Landbook | [land-book.com](https://land-book.com) | Landing-page gallery filtered by industry, style, and section | Free |
+| SEESAW | [seesaw.website](https://seesaw.website) | Hand-picked, daily, category-filtered (AI, fintech, dev tools) | Free |
+| Framer Community | [framer.com/community](https://framer.com/community) | Live sites, templates, and remixable projects you can inspect | Free |
+| Webflow — animation sites | [webflow.com/animation-websites](https://webflow.com/animation-websites) | Curated animation-led Webflow sites; reference when the brief says "make it move" | Free |
+
+**AI design and generation — prompt in, page out**
+
+| Site | URL | What it gives you | Free / Paid |
+| --- | --- | --- | --- |
+| Lovable | [lovable.dev](https://lovable.dev) | Full-stack apps from conversation, live preview, GitHub sync | Freemium |
+| Stitch | [stitch.withgoogle.com](https://stitch.withgoogle.com) | Google's UI generator: describe a screen, get editable UI exportable to code/Figma | Free |
+| Superdesign | [superdesign.dev](https://superdesign.dev) | Design-agent IDE generating multiple UI variants side by side | Freemium |
+| Design Extractor | [design-extractor.com](https://design-extractor.com) | Paste a URL, get a `DESIGN.md` — YAML tokens + written rationale for your coding agent | Freemium |
+| DesignPrompts | [designprompts.dev](https://designprompts.dev) | Pick a page template + one of ~48 "looks", preview, copy the prompt — free, no sign-up | Free |
+| MotionSites | [motionsites.ai](https://motionsites.ai) | Premium hero-section prompts by industry (SaaS, real estate, wellness, 3D) | Freemium |
+| MotionVideo | [motionvideo.xyz](https://motionvideo.xyz) | Agent skills for motion: scene starters + motion tokens that render showreels with Remotion | Free |
+| Open Design | `%LOCALAPPDATA%\Programs\Open Design\Open Design.exe` (local app, no URL) | Desktop design application installed on this machine | Local install |
+
+**Prompt and code references — raw material**
+
+| Site | URL | What it gives you | Free / Paid |
+| --- | --- | --- | --- |
+| God of Prompt | [godofprompt.ai](https://godofprompt.ai) | 30,000+ prompts across marketing, design, dev, business | Freemium |
+| liquidGL | [github.com/naughtyduk/liquidGL](https://github.com/naughtyduk/liquidGL) | Open-source WebGPU/WebGL liquid-glass effect library — the technique behind most liquid-chrome/glass heroes | Free |
+| awesome-opus5-5-videos | [github.com/yihui-dev/awesome-opus5-5-videos](https://github.com/yihui-dev/awesome-opus5-5-videos) | Viral coding-agent videos with the prompts that produced them | Free |
+
 Two reference files for the design side, kept outside this repo so they stay visible on the desktop:
 
 | File | Contents |
 | --- | --- |
 | [`Desktop/Design/frontend-design-styles.md`](../../../Design/frontend-design-styles.md) | 44 frontend visual styles in 6 families. Each with a definition, where it earns its keep, a motion rating, and which skill to load. Includes a quick-pick index and pairing rules. |
-| [`Desktop/Design/ui-ux components/README.md`](../../../Design/ui-ux%20components/README.md) | 29 component libraries, inspiration galleries, and AI design tools — each with URL, what it gives you, and whether it's free or paid. |
+| [`Desktop/Design/ui-ux components/README.md`](../../../Design/ui-ux%20components/README.md) | The same 29 links, grouped, with notes on licences and shortcut behaviour. |
 
-The style taxonomy is sourced from `frontend_design_styles.docx`, which is kept here for provenance.
+The style taxonomy is sourced from `frontend_design_styles.docx` / `frontend_design_styles.md`, kept here for provenance.
 
 ### The six style families
 
