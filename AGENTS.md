@@ -33,6 +33,7 @@ The spec is the product. Never start coding before the spec exists and the user 
 ## Conventions
 
 - Markdown only. No build step, no runtime.
-- Keep `SKILL.md` short. Move detail into `references/` so it loads on demand.
-- Write the `description` as *when to use this*, not *what this is*. It is the routing signal.
+- Keep `SKILL.md` short. References live beside it in `references/`, loaded on demand.
+- Write the `description` as *when to use this*, not *what this is*. It's the routing signal.
 - Docs over code: if a decision isn't written down, it didn't happen.
+- Third-party attribution lives in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md). If you add, remove, or update a skill, update that file in the same commit.

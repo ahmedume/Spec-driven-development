@@ -33,6 +33,7 @@ This repo is the opposite: **one clone, wired into every harness, and every sess
 | **Design reference** | A 44-style frontend taxonomy and a 29-link component/inspiration index |
 | **Format** | Markdown only. No build step, no runtime, no vendor lock-in |
 | **Harnesses** | OpenCode, Claude Code, Codex CLI, Cursor, Cline, and `AGENTS.md`-native tools |
+| **Attribution** | All 107 skills inventoried in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) — see *Licence and provenance* below |
 
 ---
 
@@ -542,8 +543,13 @@ To add a skill: create `skills/<new-skill>/SKILL.md` with `name`, `description`,
 
 ## Licence and provenance
 
-Skills are vendored from their original authors and retain their own licences — 81 of the 107 carry MIT, 26 are unlicensed and are included as reference. Per-skill provenance lives in each `SKILL.md` frontmatter or `LICENSE` file where present.
+Everything third-party is inventoried in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md): 9 skills on Apache License 2.0, 4 proprietary Anthropic document skills (all rights reserved), 66 Jeffallan skills with no license recorded (all rights reserved, private internal use), 28 uncredited skills (all rights reserved), and 26 SIL-OFL fonts bundled in `canvas-design`.
 
-This repo is private and intended for internal and personal use. Do not redistribute it publicly without auditing the unlicensed skills first.
+Short version:
 
-The method documents in `docs/` and the design reference files were written for this harness.
+- Licensed files in the repo (`LICENSE.txt`, `*-OFL.txt`) are part of the goods — keep them, don't edit them.
+- Execution of this repo inside your organisation is fine.
+- **Do not redistribute this repo publicly as-is.** The unlicensed majority does not grant redistribution rights.
+- Fix licence hygiene up front if you want this public: see Section E of the notices file.
+
+The method documents in `docs/`, `AGENTS.md`, and the `All-about-prompts/` conversions were written for this harness.
