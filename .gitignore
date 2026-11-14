@@ -1,0 +1,26 @@
+# Build output
+node_modules/
+dist/
+build/
+*.tsbuildinfo
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+
+# Language artefacts
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Tooling
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Local state
+*.log

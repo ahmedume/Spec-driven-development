@@ -146,14 +146,16 @@ spec-driv-dev/
 │   ├── 06-development-workflow.md
 │   ├── 07-harness-rules.md
 │   ├── 08-architecture-review.md
-│   └── 09-spec-interrogation.md
+│   ├── 09-spec-interrogation.md
+│   ├── frontend-design-styles.md  ← raw styles A–Z listing
+│   └── source-material/          ← raw sources the guides were structured from
 ├── skills/                    ← 107 skill directories
 │   └── <skill-id>/
 │       ├── SKILL.md           ← the instructions
 │       └── references/        ← loaded on demand, not always-on
-├── All-about-prompts/         ← original sources (docx + converted .md)
-│   └── README.md              ← provenance: which raw file became which guide
-└── frontend_design_styles.docx / .md ← source for the style taxonomy (44 styles)
+├── AGENTS.md                  ← harness default rules (copy into any project)
+├── THIRD_PARTY_NOTICES.md     ← third-party attribution for every skill and font
+└── .gitignore
 ```
 
 The skill ID is derived from the **folder name**, not the `name:` field in the frontmatter. Where they differ, the folder wins.
@@ -421,7 +423,7 @@ The method behind the skills, in [`docs/`](docs/README.md):
 
 ### The 29 design links
 
-From the design team's shortcut folder (`Desktop/Design/ui-ux components/`, URLs below and in [`Desktop/Design/ui-ux components/README.md`](../../../Design/ui-ux%20components/README.md)).
+From the design team's shortcut collection — the sites below are the whole set, resolved and documented.
 
 **Component libraries — code you copy into a project**
 
@@ -462,7 +464,7 @@ From the design team's shortcut folder (`Desktop/Design/ui-ux components/`, URLs
 | DesignPrompts | [designprompts.dev](https://designprompts.dev) | Pick a page template + one of ~48 "looks", preview, copy the prompt — free, no sign-up | Free |
 | MotionSites | [motionsites.ai](https://motionsites.ai) | Premium hero-section prompts by industry (SaaS, real estate, wellness, 3D) | Freemium |
 | MotionVideo | [motionvideo.xyz](https://motionvideo.xyz) | Agent skills for motion: scene starters + motion tokens that render showreels with Remotion | Free |
-| Open Design | `%LOCALAPPDATA%\Programs\Open Design\Open Design.exe` (local app, no URL) | Desktop design application installed on this machine | Local install |
+| Open Design | Local desktop application — no public URL | Desktop design tool; install it separately from its official source | Local install |
 
 **Prompt and code references — raw material**
 
@@ -472,14 +474,16 @@ From the design team's shortcut folder (`Desktop/Design/ui-ux components/`, URLs
 | liquidGL | [github.com/naughtyduk/liquidGL](https://github.com/naughtyduk/liquidGL) | Open-source WebGPU/WebGL liquid-glass effect library — the technique behind most liquid-chrome/glass heroes | Free |
 | awesome-opus5-5-videos | [github.com/yihui-dev/awesome-opus5-5-videos](https://github.com/yihui-dev/awesome-opus5-5-videos) | Viral coding-agent videos with the prompts that produced them | Free |
 
-Two reference files for the design side, kept outside this repo so they stay visible on the desktop:
+### The design references
+
+All design material is self-contained in this repo:
 
 | File | Contents |
 | --- | --- |
-| [`Desktop/Design/frontend-design-styles.md`](../../../Design/frontend-design-styles.md) | 44 frontend visual styles in 6 families. Each with a definition, where it earns its keep, a motion rating, and which skill to load. Includes a quick-pick index and pairing rules. |
-| [`Desktop/Design/ui-ux components/README.md`](../../../Design/ui-ux%20components/README.md) | The same 29 links, grouped, with notes on licences and shortcut behaviour. |
+| [`docs/frontend-design-styles.md`](docs/frontend-design-styles.md) | The raw A–Z listing of all 44 frontend design styles |
+| [`docs/source-material/`](docs/source-material/README.md) | The raw sources the guides were structured from |
 
-The style taxonomy is sourced from `frontend_design_styles.docx` / `frontend_design_styles.md`, kept here for provenance.
+The style taxonomy is sourced from the A–Z listing in `docs/frontend-design-styles.md`.
 
 ### The six style families
 
@@ -504,7 +508,7 @@ Plus 1 unclassified entry (`YSK aesthetic`) that isn't a real style family.
 
 **Descriptions are routing signals.** The `description:` field decides whether a skill loads. It's written as *when to use this*, not *what this is*.
 
-**Docs over code.** If a decision isn't written down, it didn't happen. The `docs/` directory is canonical; the `.docx` files in `All-about-prompts/` are provenance.
+**Docs over code.** If a decision isn't written down, it didn't happen. The `docs/` directory is canonical; `docs/source-material/` holds the raw source text.
 
 **Markdown only.** No build step, no dependencies, no CI. A skill is a file.
 
@@ -552,4 +556,4 @@ Short version:
 - **Do not redistribute this repo publicly as-is.** The unlicensed majority does not grant redistribution rights.
 - Fix licence hygiene up front if you want this public: see Section E of the notices file.
 
-The method documents in `docs/`, `AGENTS.md`, and the `All-about-prompts/` conversions were written for this harness.
+The method documents in `docs/` and `AGENTS.md` were written for this harness.

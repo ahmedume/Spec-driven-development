@@ -1,6 +1,6 @@
 # Third-Party Notices
 
-This repository redistributes 107 skills, most of which were written by other people. The repository's own content (README, `docs/`, `AGENTS.md`, `All-about-prompts/`) is **not** covered by these notices and remains the repository owner's.
+This repository redistributes 107 skills, most of which were written by other people. The repository's own content (README, `docs/`, `AGENTS.md`) is **not** covered by these notices and remains the repository owner's.
 
 This file lists, for each skill and font, what the license recorded in the repo actually says, attribution where known, and the terms that apply. Nothing here grants more rights than the upstream author gave.
 
@@ -109,7 +109,7 @@ Skills:
 
 ## D. Repository's own content
 
-The following are original to this repository and are **not** covered by the third-party terms above: `README.md`, `AGENTS.md`, `docs/`, `All-about-prompts/` (including the markdown conversions), and `frontend_design_styles.md`. All rights reserved by the repository author. Internal use is unrestricted.
+The following are original to this repository and are **not** covered by the third-party terms above: `README.md`, `AGENTS.md`, `docs/`, `AGENTS.md`, and the conversions under `docs/source-material/`. All rights reserved by the repository author. Internal use is unrestricted.
 
 ---
 

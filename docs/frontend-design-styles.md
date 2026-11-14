@@ -1,6 +1,6 @@
-﻿# frontend_design_styles
+﻿# Frontend Design Styles (raw A–Z listing)
 
-> Auto-extracted from `frontend_design_styles.docx`. Unstructured source text preserved as-is; tables and multi-column layout land as flat lines with ` | ` separators.
+> Auto-extracted from the original style-listing document. Unstructured source text preserved as-is; tables and multi-column layout land as flat lines with ` | ` separators.
 > The structured, referenced version with families and skill mapping lives at `frontend-design-styles.md`.
 
 ---

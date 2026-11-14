@@ -30,16 +30,17 @@ The written method behind the harness. Read in order, or jump to what you need.
 
 ## Where the source material lives
 
-`../All-about-prompts/` contains the original `.docx`, `.rtf`, and `.txt` files these documents were structured from:
+[`source-material/`](source-material/README.md) holds the raw files these documents were structured from:
 
-- `A guide for prompts.docx` → 01, 02, 03, 04, 05
-- `AI_Assisted_Production_Development_Workflow.docx` → 06
-- `Instructions.docx` → 07
+- `A guide for prompts.md` → 01, 02, 03, 04, 05
+- `AI_Assisted_Production_Development_Workflow.md` → 06
+- `Instructions.md` → 07
 - `sdd-ask-model-imp.txt` → 08
-- `questions.docx` → 09
-- `write skills and spec driv dev.rtf` → earlier draft, superseded
+- `questions.md` → 09
 
-The originals are kept for provenance. The markdown files are the canonical versions — edit those, not the source.
+[`frontend-design-styles.md`](frontend-design-styles.md) is the styles A–Z listing used by the repo's design README.
+
+The markdown in `source-material/` is canonical as source text; the structured guides are canonical for use. Edit those, not the sources.
 
 ---
 
