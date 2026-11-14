@@ -1,6 +1,6 @@
-﻿# AI_Assisted_Production_Development_Workflow
+﻿# ai-assisted-production-development-workflow
 
-> Auto-extracted from `AI_Assisted_Production_Development_Workflow.docx`. Unstructured source text preserved as-is; tables and multi-column layout land as flat lines with ` | ` separators.
+> Auto-extracted from the original `AI_Assisted_Production_Development_Workflow` document. Unstructured source text preserved as-is; tables and multi-column layout land as flat lines with ` | ` separators.
 > The structured, canonical version lives in `06-development-workflow.md` at ../docs/06-development-workflow.md.
 
 ---

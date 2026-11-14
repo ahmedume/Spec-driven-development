@@ -112,4 +112,4 @@ Then **write the fix down**. Every failure is a missing rule in your skill file.
 
 ---
 
-*Structured from the original `A guide for prompts` document (Section 5).*
+*Structured from `a-guide-for-prompts.md` (Section 5).*

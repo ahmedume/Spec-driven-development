@@ -178,4 +178,4 @@ Each prompt should be self-contained and reference the previous step's output.
 
 ---
 
-*Structured from the original `A guide for prompts` document (Sections 1–2).*
+*Structured from `a-guide-for-prompts.md` (Sections 1–2).*

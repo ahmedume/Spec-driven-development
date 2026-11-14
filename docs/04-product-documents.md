@@ -157,4 +157,4 @@ Nine sections, written before scaffolding, reviewed by the user, then built in p
 
 ---
 
-*Structured from the original `A guide for prompts` document (Section 4).*
+*Structured from `a-guide-for-prompts.md` (Section 4).*

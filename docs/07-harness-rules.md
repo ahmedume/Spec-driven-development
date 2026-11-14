@@ -69,7 +69,7 @@ Always pair the question with your recommended option and the reason. Never ask 
 - If a component can be a function, it's a function — not a 100-line class.
 - No speculative abstraction, no unnecessary dependency, no boilerplate.
 - Prefer the standard library, then the platform, then a package.
-- Load `karpathy-guidelines` for structural economy and `caveman` for output economy.
+- Keep code tight: if a component can be a function, make it one. No speculative abstraction, no unneeded dependency.
 
 Compact is not the same as clever. Small, readable, production-grade beats small and clever.
 
@@ -180,7 +180,7 @@ Update `README.md` continuously — not at the end. It should carry:
 
 ### 19. Report at the end
 
-At the end of a phase or project, produce a full written report with the `docx` skill: what was built, what was decided, what was tested, what remains.
+At the end of a phase or project, produce a full written report: what was built, what was decided, what was tested, what remains. (Use a document-generation skill such as a DOCX/PPTX generator if you have one available.)
 
 ---
 

@@ -32,9 +32,9 @@ The written method behind the harness. Read in order, or jump to what you need.
 
 [`source-material/`](source-material/README.md) holds the raw files these documents were structured from:
 
-- `A guide for prompts.md` → 01, 02, 03, 04, 05
-- `AI_Assisted_Production_Development_Workflow.md` → 06
-- `Instructions.md` → 07
+- `a-guide-for-prompts.md` → 01, 02, 03, 04, 05
+- `ai-assisted-production-development-workflow.md` → 06
+- `instructions.md` → 07
 - `sdd-ask-model-imp.txt` → 08
 - `questions.md` → 09
 

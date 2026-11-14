@@ -1,16 +1,16 @@
 # Spec-Driven Dev Harness
 
-A portable AI coding environment: **107 skills**, a written method, and a design reference library — one clone, and every harness on the machine inherits the same standard.
+A portable AI coding harness: **79 skills**, a written method, and a design reference pack — one clone, and every harness on the machine inherits the same standard.
 
 Works with **OpenCode, Claude Code, Codex CLI, Cursor, Cline, and anything that reads the open Agent Skills format or `AGENTS.md`.**
 
-The point is not the skills individually. It's that a new machine, a new teammate, or a new model starts at the same baseline as the one you've spent a year tuning.
+The point is not the skills individually. It's that a new machine, a new teammate, or a new model starts at the same baseline as a fully-tuned one.
 
 ---
 
 ## Why it's portable
 
-A skill is a folder: `<skill-id>/SKILL.md` with `name` and `description` frontmatter, plus optional `references/`, `scripts/`, and `assets/`. That is the **open Agent Skills standard** — not an OpenCode invention. Every major agent reads the same folder shape; only the directory it scans differs.
+A skill is a folder: `<skill-id>/SKILL.md` with `name` and `description` frontmatter, plus optional `references/`, `scripts/`, and `assets/`. That is the **open Agent Skills standard** — not any one tool's convention. Every major agent reads the same folder shape; only the directory it scans differs.
 
 So the skills are never rewritten per tool. The repo stays one source of truth, and each harness points at it.
 
@@ -18,7 +18,7 @@ So the skills are never rewritten per tool. The repo stays one source of truth, 
 
 ## The problem this solves
 
-Every AI coding setup decays the same way. You write a few good instructions, they get copied into three projects, two copies go stale, and eventually nobody knows which `AGENTS.md` is canonical. A new teammate starts from zero. A new model starts from zero. The knowledge lives in someone's chat history.
+Every AI coding setup decays the same way. Instructions get written once, copied into three projects, and two copies go stale. A new machine starts from zero. A new teammate starts from zero. The knowledge lives in someone's chat history.
 
 This repo is the opposite: **one clone, wired into every harness, and every session inherits the same standard.** Skills are plain markdown, so they're readable, diffable, and portable. Nothing is compiled, nothing is hosted.
 
@@ -28,27 +28,27 @@ This repo is the opposite: **one clone, wired into every harness, and every sess
 
 | | |
 | --- | --- |
-| **Skills** | 107, covering planning, engineering, design, data, infra, testing, review, documents, and business |
+| **Skills** | 79, covering planning, engineering, design, data, infra, testing, review, documents, and business |
 | **Method docs** | 9 structured guides — prompt engineering through to the 19-phase development lifecycle |
 | **Design reference** | A 44-style frontend taxonomy and a 29-link component/inspiration index |
 | **Format** | Markdown only. No build step, no runtime, no vendor lock-in |
 | **Harnesses** | OpenCode, Claude Code, Codex CLI, Cursor, Cline, and `AGENTS.md`-native tools |
-| **Attribution** | All 107 skills inventoried in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) — see *Licence and provenance* below |
+| **Attribution** | Full third-party inventory in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) |
 
 ---
 
 ## Install
 
-### 1. Clone once, anywhere
+### 1. Clone once
 
 ```bash
-git clone <your-repo-url> ~/.config/harness
+git clone https://github.com/ahmedume/Spec-driven-development.git ~/.config/harness
 ```
 
 Windows (PowerShell):
 
 ```powershell
-git clone <your-repo-url> "$env:USERPROFILE\.config\harness"
+git clone https://github.com/ahmedume/Spec-driven-development.git "$env:USERPROFILE\.config\harness"
 ```
 
 The path is yours to choose — everything below points at `$HARNESS`, so substitute your own.
@@ -94,18 +94,7 @@ A junction is a pointer, not a copy — the files exist once, and `git pull` upg
 
 ### 3. The universal fallback: `AGENTS.md`
 
-`AGENTS.md` is the cross-agent instruction convention, read by Codex, Cursor, Copilot, Cline, OpenCode, and most others. If a tool has no native skill support, this is the whole install:
-
-```markdown
-# Project instructions
-
-Skills live in ~/.config/harness/skills. When a task matches a skill's
-description, read skills/<skill-id>/SKILL.md before starting, and follow it.
-```
-
-Commit that to the repo root (or your home directory for a personal default). It costs nothing and works everywhere.
-
-A ready-made version ships in this repo as [`AGENTS.md`](AGENTS.md) — copy it and adjust.
+`AGENTS.md` is the cross-agent instruction convention, read by Codex, Cursor, Copilot, Cline, OpenCode, and most others. If a tool has no native skill support, this is the whole install — commit [`AGENTS.md`](AGENTS.md) to your project or home directory.
 
 ### 4. Verify
 
@@ -121,9 +110,9 @@ If it loads, the wiring is correct.
 
 ### Why point at the clone instead of copying
 
-Copying 107 directories into each harness's folder looks simpler and isn't:
+Copying 79 directories into each harness's folder looks simpler and isn't:
 
-- **Updates** mean re-copying 819 files, per harness, forever.
+- **Updates** mean re-copying every file, per harness, forever.
 - **Copies drift**, and you can no longer tell which version is live.
 - **Windows symlinks** for directories need elevation; junctions don't, which is why the commands above use `mklink /J`.
 
@@ -137,6 +126,8 @@ One clone plus pointers means `git pull` is the upgrade path for every tool on t
 spec-driv-dev/
 ├── README.md                  ← you are here
 ├── AGENTS.md                  ← harness default rules (copy into any project)
+├── LICENSE                    ← MIT, for the harness's own content
+├── THIRD_PARTY_NOTICES.md     ← third-party attribution for everything else
 ├── docs/                      ← the written method (9 guides)
 │   ├── 01-prompt-engineering.md
 │   ├── 02-context-engineering.md
@@ -149,13 +140,10 @@ spec-driv-dev/
 │   ├── 09-spec-interrogation.md
 │   ├── frontend-design-styles.md  ← raw styles A–Z listing
 │   └── source-material/          ← raw sources the guides were structured from
-├── skills/                    ← 107 skill directories
-│   └── <skill-id>/
-│       ├── SKILL.md           ← the instructions
-│       └── references/        ← loaded on demand, not always-on
-├── AGENTS.md                  ← harness default rules (copy into any project)
-├── THIRD_PARTY_NOTICES.md     ← third-party attribution for every skill and font
-└── .gitignore
+└── skills/                    ← 79 skill directories
+    └── <skill-id>/
+        ├── SKILL.md           ← the instructions
+        └── references/        ← loaded on demand, not always-on
 ```
 
 The skill ID is derived from the **folder name**, not the `name:` field in the frontmatter. Where they differ, the folder wins.
@@ -204,14 +192,17 @@ The reason this is called *spec-driven*: the spec is the product, and the code i
 | **Write the spec** | `spec-driven-dev` | Produces the 9-file package |
 | **Design the system** | `architecture-designer` · `api-designer` | Diagrams, ADRs, API contracts |
 | **Review the design** | `architecture-designer` + [`08-architecture-review.md`](docs/08-architecture-review.md) | Catches the bottleneck before it's a rewrite |
-| **Build the UI** | `elite-frontend-dev` | Bespoke, non-templated frontend |
+| **Build the UI** | bring your own frontend skill (see below) or upstream marketplace | This repo ships no third-party frontier-site skill — see [Notices](THIRD_PARTY_NOTICES.md) |
+| **Build the frontend** | upstream marketplace for award-level builds | e.g. `npx skills add <owner/repo> --skill <name>` — see [Notices](THIRD_PARTY_NOTICES.md) for what is deliberately not vendored here |
 | **Build the API** | `backend-mastery` · `fastapi-expert` / `nestjs-expert` / … | Correctness-first, tested |
 | **Build the data layer** | `postgres-pro` · `sql-pro` | Schema, indexes, query plans |
 | **Test it** | `test-master` · `playwright-expert` | Unit through E2E |
-| **Review it** | `code-reviewer` · `staff-engineer-review` | Prioritised findings, not a list of nits |
-| **Secure it** | `security-reviewer` | Severity-rated audit |
+| **Review it** | `code-reviewer` | Prioritised findings, not a list of nits |
+| **Secure it** | `security-reviewer` · `secure-code-guardian` | Severity-rated audit; OWASP prevention |
 | **Ship it** | `devops-engineer` | CI/CD, containers, deploy |
-| **Document it** | `readme-generator` · `project-report-generator` | README and formal report |
+| **Document it** | `code-documenter` | Docs and docstrings |
+
+For upstream frontend/design skills that are not vendored here, install from the marketplace: `npx skills add <owner/repo> --skill <name>`, or from [skills.sh](https://skills.sh).
 
 ### The quality gate
 
@@ -225,9 +216,9 @@ implemented → types pass → lint passes → tests pass → manual test → co
 
 ## Skill catalog
 
-All 107 skills, grouped by what you'd reach for them to do.
+All 79 skills, grouped by what you'd reach for them to do.
 
-### Spec, planning & architecture — 11
+### Spec, planning & architecture — 9
 
 | Skill | What it does |
 | --- | --- |
@@ -240,25 +231,17 @@ All 107 skills, grouped by what you'd reach for them to do.
 | `microservices-architect` | Decomposes monoliths into bounded contexts; picks communication patterns, sagas, CQRS, event sourcing. |
 | `graphql-architect` | Schema design, Apollo Federation, resolvers with DataLoader, live subscriptions. |
 | `the-fool` | Structured critical reasoning: devil's advocate, pre-mortem, red team, assumption audit. |
-| `karpathy-guidelines` | Behavioural guardrails against overcomplication — surgical changes, surfaced assumptions, verifiable success criteria. |
-| `project-report-generator` | Generates a formal project report, chaptered from introduction through testing to conclusion. |
 
-### Frontend & design — 12
+### Frontend & design — 6
 
 | Skill | What it does |
 | --- | --- |
-| `elite-frontend-dev` | **The default site-build skill.** Bespoke design system, intentional motion, non-templated output. Trigger it before writing any HTML/CSS/JS. |
-| `awwwards` | Builds award-calibre sites against the Site of the Day bar: concept, art direction, type, motion, WebGL, transitions, SEO, accessibility, visual QA. |
-| `high-front-end` | Cinematic, scroll-driven 3D: WebGL scenes, camera moves through space, Three.js/R3F with GSAP ScrollTrigger. |
-| `jury` | Scores a live site like an Awwwards jury: screenshots every page type on desktop and throttled mobile, measures LCP/CLS/FPS/axe/keyboard, returns a ranked fix list. |
-| `ui-ux-pro-max` | UI/UX design intelligence backed by a searchable pattern database. |
-| `brand-guidelines` | Applies a brand's official colours, typography, and voice to any artifact. |
-| `canvas-design` | Static visual art as PNG/PDF — posters, illustrations, print-grade design. |
-| `theme-factory` | Applies or generates a theme (10 presets) across slides, docs, reports, and landing pages. |
+| `ui-ux-pro-max` | UI/UX design intelligence backed by a searchable pattern database (MIT — Next Level Builder). |
 | `artifacts-builder` | Builds large multi-component HTML artifacts with React, Tailwind, shadcn/ui, routing, and state. |
-| `image-enhancer` | Upscales, sharpens, and cleans images — especially screenshots for docs and decks. |
-| `brag-slim` | Turns a project directory or URL into a short launch video with music, motion, and share copy. |
+| `canvas-design` | Static visual art as PNG/PDF — posters, illustrations, print-grade design. |
+| `brand-guidelines` | Applies a brand's official colours, typography, and voice to any artifact. |
 | `slack-gif-creator` | Creates Slack-optimised animated GIFs and emoji animations within platform size limits. |
+| `theme-factory` | Applies or generates a theme (10 presets) across slides, docs, reports, and landing pages. |
 
 ### Languages — 11
 
@@ -280,124 +263,99 @@ All 107 skills, grouped by what you'd reach for them to do.
 
 | Skill | What it does |
 | --- | --- |
-| `react-expert` | React 18/19: components, hooks, Server Components, Suspense, `useActionState`, performance. |
+| `react-expert` | React 18/19: components, hooks, Server Components, Suspense, performance. |
 | `nextjs-developer` | Next.js 14+ App Router: RSC, server actions, route handlers, middleware, metadata, streaming, Vercel. |
 | `vue-expert` | Vue 3 Composition API, Nuxt 3 SSR/SSG, Pinia, Quasar/Capacitor, PWA, Vite tuning. |
 | `vue-expert-js` | The same Vue toolkit in JavaScript only, with JSDoc types instead of a TS compiler. |
 | `angular-architect` | Angular 17+ standalone components, lazy routing, guards, NgRx, RxJS, bundle optimisation. |
-| `react-native-expert` | React Native + Expo: navigation hierarchies, native modules, FlatList performance, SafeArea, keyboard. |
+| `react-native-expert` | React Native + Expo: navigation hierarchies, native modules, FlatList performance, SafeArea. |
 | `flutter-expert` | Flutter 3 and Dart: widgets, Riverpod/Bloc, GoRouter, platform channels, performance. |
 | `nestjs-expert` | NestJS modules, controllers, services, DTOs, guards, interceptors, DI, Swagger, e2e tests. |
-| `backend-mastery` | Backend architecture plus test discipline: correctness-first reasoning, rigorous tests, actually running them. |
+| `backend-mastery` | Backend architecture plus test discipline: correctness-first reasoning, rigorous tests, actually run them. |
 | `fastapi-expert` | FastAPI and Pydantic v2: async endpoints, SQLAlchemy async, JWT, WebSockets, OpenAPI. |
-| `django-expert` | Django and DRF: models and indexes, `select_related`/`prefetch_related`, serializers, viewsets, JWT. |
+| `django-expert` | Django and DRF: models and indexes, `select_related`, serializers, viewsets, JWT. |
 | `laravel-specialist` | Laravel 10+: Eloquent, Sanctum, Horizon queues, API resources, Livewire, Pest tests. |
 | `rails-expert` | Rails 7+: Active Record tuning, Turbo Frames/Streams, Action Cable, Sidekiq, RSpec. |
 | `spring-boot-engineer` | Spring Boot 3.x: REST controllers, Security 6, JPA, WebFlux, Spring Cloud. |
 | `dotnet-core-expert` | .NET 8 minimal APIs, clean architecture, EF Core, MediatR CQRS, JWT, AOT compilation. |
-| `fullstack-guardian` | End-to-end features with layered security: database → API → UI, auth, validation, encoding, parameterised queries. |
-| `shopify-expert` | Liquid themes, `theme.json` sections, Shopify apps, Storefront API, checkout extensions, Functions. |
-| `wordpress-pro` | Custom themes and plugins, Gutenberg blocks and patterns, WooCommerce, REST endpoints, hardening. |
-| `salesforce-developer` | Apex, Lightning Web Components, SOQL tuning, triggers, batch jobs, platform events, DX and CI/CD. |
-| `embedded-systems` | Firmware: STM32/ESP32, FreeRTOS, interrupt handlers, DMA, power optimisation, timing debug. |
+| `fullstack-guardian` | End-to-end features with layered security: database → API → UI, auth, validation, encoding. |
+| `shopify-expert` | Liquid themes, Storefront API, Shopify apps, checkout extensions. |
+| `wordpress-pro` | Custom themes and plugins, Gutenberg blocks, WooCommerce, REST endpoints, hardening. |
+| `salesforce-developer` | Apex, Lightning Web Components, SOQL tuning, triggers, batch jobs, DevOps. |
+| `embedded-systems` | Firmware: STM32/ESP32, FreeRTOS, interrupt handlers, DMA, power optimisation. |
 | `game-developer` | Unity/Unreal: ECS, physics, netcode with lag compensation, shaders, 60+ FPS budgets. |
-| `cli-developer` | CLI tools: argument parsing, subcommands, progress UI, shell completions, cross-platform terminals. |
-| `websocket-engineer` | Real-time messaging with WebSockets or Socket.IO: bidirectional events, Redis-backed horizontal scaling, presence, rooms. |
+| `cli-developer` | CLI tools: argument parsing, subcommands, progress UI, shell completions. |
+| `websocket-engineer` | Bidirectional messaging with WebSockets and Socket.IO, Redis scaling, presence, rooms. |
 
 ### Data — 7
 
 | Skill | What it does |
 | --- | --- |
 | `postgres-pro` | EXPLAIN analysis, JSONB, extensions, replication, VACUUM tuning, performance monitoring. |
-| `sql-pro` | Complex queries, window functions, CTEs, indexing strategy, plan analysis, dialect migration. |
-| `database-optimizer` | Slow queries across Postgres and MySQL: rewrites, index design, config tuning, partitioning, lock contention. |
-| `pandas-pro` | DataFrame manipulation: joins, pivots, resampling, NaN handling, groupby, performance on large frames. |
-| `spark-engineer` | DataFrame and RDD jobs, shuffle tuning, partitioning, executor memory, structured streaming, Parquet. |
-| `ml-pipeline` | MLflow/W&B tracking, Kubeflow/Airflow DAGs, Feast feature stores, model registry, retraining automation. |
+| `sql-pro` | Complex queries, window functions, CTEs, indexing strategy, dialect migration. |
+| `database-optimizer` | Slow queries across Postgres and MySQL: rewrites, index design, config tuning. |
+| `pandas-pro` | DataFrame manipulation: joins, pivots, resampling, NaN handling, groupby. |
+| `spark-engineer` | DataFrame and RDD jobs, shuffle tuning, partitioning, structured streaming, Parquet. |
+| `ml-pipeline` | MLflow/W&B tracking, Kubeflow/Airflow DAGs, Feast feature stores, model registry. |
 | `rag-architect` | Chunking, embeddings, vector stores, hybrid search, reranking, retrieval evaluation. |
 
 ### Infrastructure & operations — 7
 
 | Skill | What it does |
 | --- | --- |
-| `devops-engineer` | Dockerfiles, CI/CD pipelines, Kubernetes manifests, Terraform/Pulumi, GitOps, incident runbooks. |
-| `cloud-architect` | AWS/Azure/GCP architecture, migration plans, cost optimisation, disaster recovery, landing zones. |
-| `terraform-engineer` | Reusable modules, state migration and imports, provider config, multi-environment workflows, IaC testing. |
-| `kubernetes-specialist` | Deployments, RBAC, NetworkPolicies, pod security, storage, Helm, GitOps, multi-cluster management. |
-| `monitoring-expert` | Prometheus/Grafana dashboards, alert rules, structured logging, tracing, k6/Artillery load tests, profiling. |
+| `devops-engineer` | Dockerfiles, CI/CD pipelines, Kubernetes, Terraform/Pulumi, GitOps, incident runbooks. |
+| `cloud-architect` | AWS/Azure/GCP architecture, migration plans, cost optimisation, disaster recovery. |
+| `terraform-engineer` | Reusable modules, state migration and imports, provider config, IaC testing. |
+| `kubernetes-specialist` | Deployments, RBAC, NetworkPolicies, Helm, GitOps, multi-cluster. |
+| `monitoring-expert` | Prometheus/Grafana dashboards, alert rules, structured logging, tracing, load tests. |
 | `sre-engineer` | SLIs and SLOs, error budgets, incident response, capacity models, toil reduction. |
 | `chaos-engineer` | Chaos experiments, failure injection, game days, blast-radius control, rollback runbooks. |
 
-### Testing & QA — 5
+### Testing & QA — 4
 
 | Skill | What it does |
 | --- | --- |
-| `test-master` | Test files, mocking strategies, coverage analysis, test architecture, performance and security test plans. |
-| `playwright-expert` | E2E suites: page objects, fixtures, reporters, CI integration, API mocking, visual regression. |
-| `webapp-testing` | Drives a local web app with Playwright to verify behaviour, capture screenshots, and read console logs. |
-| `debugging-wizard` | Hypothesis-driven debugging: parses errors, traces stack frames, correlates logs, isolates the root cause. |
-| `code-security-auditor` | Static pre-execution audit of an untrusted codebase: malicious behaviour, supply chain, vulnerabilities. |
+| `test-master` | Test files, mocking strategies, coverage analysis, test architecture plans. |
+| `playwright-expert` | E2E suites: page objects, fixtures, reporters, CI integration, visual regression. |
+| `webapp-testing` | Drives a local web app with Playwright to verify behaviour and catch console errors. |
+| `debugging-wizard` | Hypothesis-driven debugging: errors, stack traces, logs, root-cause isolation. |
 
-### Review & security — 4
-
-| Skill | What it does |
-| --- | --- |
-| `code-reviewer` | Structured review of a diff: bugs, injection and XSS, smells, N+1 queries, naming, architecture, prioritised report. |
-| `staff-engineer-review` | Staff-plus review: implementation against plan, architectural decisions, quality, actionable feedback. |
-| `security-reviewer` | Security audit with severity ratings and remediation guidance; SAST, dependency, and cloud checks. |
-| `secure-code-guardian` | Implements auth, input validation, hashing, parameterised queries, CORS/CSP, JWTs, secure sessions. |
-
-### AI, prompts & agents — 5
+### Review & security — 3
 
 | Skill | What it does |
 | --- | --- |
-| `prompt-engineer` | Writes, refactors, and evaluates prompts — templates, output schemas, rubrics, eval suites. |
+| `code-reviewer` | Structured review of a diff: bugs, injection, smells, N+1 queries, prioritised report. |
+| `security-reviewer` | Security audit with severity ratings and remediation guidance; SAST, dependencies, cloud. |
+| `secure-code-guardian` | Implements auth, input validation, hashing, parameterised queries, CORS/CSP, JWTs. |
+
+### AI, prompts & agents — 6
+
+| Skill | What it does |
+| --- | --- |
+| `prompt-engineer` | Writes, refactors, evaluates prompts — templates, output schemas, rubrics, eval suites. |
 | `mcp-builder` | Guide for building high-quality MCP servers in Python (FastMCP) or TypeScript. |
-| `mcp-developer` | Implements MCP tool handlers, resource providers, transports, and Zod/Pydantic schema validation. |
-| `fine-tuning-expert` | LoRA/QLoRA, JSONL dataset prep, hyperparameters, PEFT, DPO/RLHF, quantised deployment. |
+| `mcp-developer` | Implements MCP tool handlers, resource providers, transports, schema validation. |
+| `fine-tuning-expert` | LoRA/QLoRA, JSONL dataset prep, hyperparameters, DPO/RLHF, quantised deployment. |
 | `skill-creator` | Creates and updates skill files that extend agent capabilities. |
-
-### Documents & content — 8
-
-| Skill | What it does |
-| --- | --- |
-| `docx` | Create, edit, and analyse Word documents, including tracked changes and comments. |
-| `pptx` | Create and edit PowerPoint decks: layouts, speaker notes, comments. |
-| `pdf` | Extract text and tables, create, merge, split, and fill PDF forms. |
-| `xlsx` | Create and edit spreadsheets with formulas, formatting, analysis, and charts. |
-| `readme-generator` | Detailed README generation: features, stack, architecture, API docs, setup. |
-| `code-documenter` | Docstrings, JSDoc, OpenAPI specs, documentation portals, user guides. |
-| `content-research-writer` | Research-backed writing: citations, hooks, outlines, per-section feedback. |
-| `domain-name-brainstormer` | Generates domain ideas and checks availability across TLDs. |
-
-### Workflow & team — 6
-
-| Skill | What it does |
-| --- | --- |
-| `internal-comms` | Status reports, leadership updates, newsletters, FAQs, and incident comms in your company's format. |
-| `meeting-insights-analyzer` | Analyses transcripts for behavioural patterns: filler words, dominance, missed listening. |
-| `changelog-generator` | Turns commit history into customer-facing release notes. |
-| `developer-growth-analysis` | Reviews your recent chat history for coding patterns and gaps, curates resources, sends a report. |
-| `skill-share` | Creates skills and shares them to a Slack workspace. |
 | `template-skill` | Starter template for writing a new skill. |
 
-### Business & research — 4
+### Documents & content — 1
 
 | Skill | What it does |
 | --- | --- |
-| `competitive-ads-extractor` | Pulls and analyses competitor ads from ad libraries to find working messaging. |
-| `lead-research-assistant` | Finds and qualifies leads, with an outreach strategy per segment. |
-| `raffle-winner-picker` | Fair random winner selection from lists or spreadsheets. |
-| `invoice-organizer` | Reads invoices and receipts, extracts fields, renames, and files by category. |
+| `code-documenter` | Docstrings, JSDoc, OpenAPI specs, documentation portals, user guides. |
 
-### Utilities — 4
+### Workflow & team — 1
 
 | Skill | What it does |
 | --- | --- |
-| `file-organizer` | Organises files by context, finds duplicates, suggests a better structure. |
-| `video-downloader` | Downloads video from YouTube and other platforms for offline use. |
+| `internal-comms` | Status reports, leadership updates, newsletters, FAQs, incident comms in company format. |
+
+### Utilities — 1
+
+| Skill | What it does |
+| --- | --- |
 | `atlassian-mcp` | Jira (JQL), Confluence (CQL), sprints and backlogs, via MCP. |
-| `caveman` | Ultra-compressed response mode that cuts output tokens while keeping technical accuracy. |
 
 ---
 
@@ -415,75 +373,73 @@ The method behind the skills, in [`docs/`](docs/README.md):
 | [Development workflow](docs/06-development-workflow.md) | You want the full 19-phase lifecycle with a skill mapped to each phase. |
 | [Harness rules](docs/07-harness-rules.md) | You're onboarding an agent or a person. The operating rules. |
 | [Architecture review](docs/08-architecture-review.md) | You're about to approve an architecture. The questions people skip. |
-| [Interrogating a spec](docs/09-spec-interrogation.md) | A feature claims to compute a score or prediction. Interrogate it before building. |
+| [Interrogating a spec](docs/09-spec-interrogation.md) | A feature claims to compute a score or prediction. Interrogate it first. |
+| [Instructions for the AI](docs/source-material/instructions.md) | You want the paste-as-is prompt that boots an agent into this workflow. |
+| [Questions after the build](docs/source-material/questions.md) | The agent says "done". Get the concept of what it actually built. |
 
 ---
 
 ## Design resources
 
-### The 29 design links
+The design material ships in-repo — no local folders, no machine-specific paths:
 
-From the design team's shortcut collection — the sites below are the whole set, resolved and documented.
+| File | Contents |
+| --- | --- |
+| [`docs/frontend-design-styles.md`](docs/frontend-design-styles.md) | All 44 frontend visual styles, raw A–Z listing |
+| [`docs/frontend-design-styles.md`](docs/frontend-design-styles.md) + [Design section](#the-six-style-families) | The taxonomy: 6 families, motion ratings, skill mapping |
+
+The URLs below are public design resources anyone can open; licences and ownership belong to their owners.
+
+### The 29 design links
 
 **Component libraries — code you copy into a project**
 
 | Site | URL | What it gives you | Free / Paid |
 | --- | --- | --- | --- |
-| 21st | [21st.dev](https://21st.dev) | Community React + Tailwind components and templates, built to be pasted into a real project | Freemium |
-| Animmaster Lib | [animmasterlib.dev](https://animmasterlib.dev) | 300 pro-grade animated components reverse-engineered from top-tier sites: scroll, mouse, page transitions, WebGL | Paid |
-| Lightswind UI | [lightswind.com](https://lightswind.com) | 300+ animated React components, 550+ blocks; open-source core (MIT), pro assets paid | Freemium |
-| Origin UI | [originui.com](https://originui.com) | Clean, unopinionated shadcn-compatible components — the neutral base layer | Free |
+| 21st | [21st.dev](https://21st.dev) | Community React + Tailwind components and templates | Freemium |
+| Animmaster Lib | [animmasterlib.dev](https://animmasterlib.dev) | 300 pro-grade animated components: scroll, mouse, page transitions, WebGL | Paid |
+| Lightswind UI | [lightswind.com](https://lightswind.com) | 300+ animated React components, 550+ blocks; MIT core, paid pro assets | Freemium |
+| Origin UI | [originui.com](https://originui.com) | Clean, unopinionated shadcn-compatible components | Free |
 | React Bits | [reactbits.dev](https://reactbits.dev) | Free animated React components: text effects, backgrounds, carousels | Free |
-| Skiper UI | [skiper-ui.com](https://skiper-ui.com) | 100+ uncommon shadcn/ui components as one-file installs, no extra packages | Freemium |
-| Vengeance UI | [vengeanceui.com](https://vengeanceui.com) | Animated, motion-led components with a darker, designed default aesthetic | Freemium |
+| Skiper UI | [skiper-ui.com](https://skiper-ui.com) | 100+ uncommon shadcn/ui components as one-file installs | Freemium |
+| Vengeance UI | [vengeanceui.com](https://vengeanceui.com) | Animated, motion-led components with a darker default | Freemium |
 | UI8 | [ui8.net](https://ui8.net) | UI kits, design systems, Figma files, 3D/illustration assets | Paid |
-| Vanta.js | [vantajs.com](https://vantajs.com) | Drop-in animated 3D backgrounds (fog, waves, net, birds) via WebGL | Free |
-| Lenis | [lenis.darkroom.engineering](https://lenis.darkroom.engineering) | Smooth-scroll library — the standard behind most "expensive-feeling" scroll | Free |
+| Vanta.js | [vantajs.com](https://vantajs.com) | Drop-in animated 3D backgrounds via WebGL | Free |
+| Lenis | [lenis.darkroom.engineering](https://lenis.darkroom.engineering) | Smooth-scroll library for expensive-feeling scroll | Free |
 | GSAP | [gsap.com](https://gsap.com) | The animation platform: ScrollTrigger, SplitText, timelines | Free |
-| Remotion | [remotion.dev](https://remotion.dev) | Frame-accurate video from React code, renders locally or in CI | Freemium |
+| Remotion | [remotion.dev](https://remotion.dev) | Frame-accurate video from React code | Freemium |
 
-**Inspiration galleries — what to show the client**
+**Inspiration galleries**
 
 | Site | URL | What it gives you | Free / Paid |
 | --- | --- | --- | --- |
 | Awwwards | [awwwards.com](https://awwwards.com) | Jury-scored Site of the Day bar for ambition | Free |
-| Dribbble | [dribbble.com](https://dribbble.com) | Shot-level UI, brand and colour ideas; worst case in feasibility | Freemium |
-| Landbook | [land-book.com](https://land-book.com) | Landing-page gallery filtered by industry, style, and section | Free |
-| SEESAW | [seesaw.website](https://seesaw.website) | Hand-picked, daily, category-filtered (AI, fintech, dev tools) | Free |
-| Framer Community | [framer.com/community](https://framer.com/community) | Live sites, templates, and remixable projects you can inspect | Free |
-| Webflow — animation sites | [webflow.com/animation-websites](https://webflow.com/animation-websites) | Curated animation-led Webflow sites; reference when the brief says "make it move" | Free |
+| Dribbble | [dribbble.com](https://dribbble.com) | Shot-level UI, brand and colour ideas | Freemium |
+| Landbook | [land-book.com](https://land-book.com) | Landing-page gallery filtered by industry, style, section | Free |
+| SEESAW | [seesaw.website](https://seesaw.website) | Hand-picked, daily, category-filtered | Free |
+| Framer Community | [framer.com/community](https://framer.com/community) | Live sites, templates, remixable projects | Free |
+| Webflow — animation sites | [webflow.com/animation-websites](https://webflow.com/animation-websites) | Curated animation-led sites; reference when the brief is "make it move" | Free |
 
-**AI design and generation — prompt in, page out**
+**AI design and generation**
 
 | Site | URL | What it gives you | Free / Paid |
 | --- | --- | --- | --- |
 | Lovable | [lovable.dev](https://lovable.dev) | Full-stack apps from conversation, live preview, GitHub sync | Freemium |
-| Stitch | [stitch.withgoogle.com](https://stitch.withgoogle.com) | Google's UI generator: describe a screen, get editable UI exportable to code/Figma | Free |
+| Stitch | [stitch.withgoogle.com](https://stitch.withgoogle.com) | Google's UI generator: prompt → editable UI, export to code/Figma | Free |
 | Superdesign | [superdesign.dev](https://superdesign.dev) | Design-agent IDE generating multiple UI variants side by side | Freemium |
-| Design Extractor | [design-extractor.com](https://design-extractor.com) | Paste a URL, get a `DESIGN.md` — YAML tokens + written rationale for your coding agent | Freemium |
-| DesignPrompts | [designprompts.dev](https://designprompts.dev) | Pick a page template + one of ~48 "looks", preview, copy the prompt — free, no sign-up | Free |
-| MotionSites | [motionsites.ai](https://motionsites.ai) | Premium hero-section prompts by industry (SaaS, real estate, wellness, 3D) | Freemium |
-| MotionVideo | [motionvideo.xyz](https://motionvideo.xyz) | Agent skills for motion: scene starters + motion tokens that render showreels with Remotion | Free |
-| Open Design | Local desktop application — no public URL | Desktop design tool; install it separately from its official source | Local install |
+| Design Extractor | [design-extractor.com](https://design-extractor.com) | Paste a URL, get a `DESIGN.md` — YAML tokens + rationale | Freemium |
+| DesignPrompts | [designprompts.dev](https://designprompts.dev) | Pick a page template + one of ~48 styles, preview, copy prompt | Free |
+| MotionSites | [motionsites.ai](https://motionsites.ai) | Ready-to-use hero prompts by industry | Freemium |
+| MotionVideo | [motionvideo.xyz](https://motionvideo.xyz) | Agent skills for motion: scene starters and motion tokens rendering via Remotion | Free |
+| Open Design | no public URL | Desktop design application; install separately from its official source | Local install |
 
-**Prompt and code references — raw material**
+**Prompt and code references**
 
 | Site | URL | What it gives you | Free / Paid |
 | --- | --- | --- | --- |
-| God of Prompt | [godofprompt.ai](https://godofprompt.ai) | 30,000+ prompts across marketing, design, dev, business | Freemium |
-| liquidGL | [github.com/naughtyduk/liquidGL](https://github.com/naughtyduk/liquidGL) | Open-source WebGPU/WebGL liquid-glass effect library — the technique behind most liquid-chrome/glass heroes | Free |
+| God of Prompt | [godofprompt.ai](https://godofprompt.ai) | 30,000+ prompts across marketing, design, business | Freemium |
+| liquidGL | [github.com/naughtyduk/liquidGL](https://github.com/naughtyduk/liquidGL) | Open-source WebGPU liquid-glass effect library | Free |
 | awesome-opus5-5-videos | [github.com/yihui-dev/awesome-opus5-5-videos](https://github.com/yihui-dev/awesome-opus5-5-videos) | Viral coding-agent videos with the prompts that produced them | Free |
-
-### The design references
-
-All design material is self-contained in this repo:
-
-| File | Contents |
-| --- | --- |
-| [`docs/frontend-design-styles.md`](docs/frontend-design-styles.md) | The raw A–Z listing of all 44 frontend design styles |
-| [`docs/source-material/`](docs/source-material/README.md) | The raw sources the guides were structured from |
-
-The style taxonomy is sourced from the A–Z listing in `docs/frontend-design-styles.md`.
 
 ### The six style families
 
@@ -502,13 +458,13 @@ Plus 1 unclassified entry (`YSK aesthetic`) that isn't a real style family.
 
 ## Conventions
 
-**Skills are pushed as-is.** This repo is a vendored copy, not a fork. Where a skill has a flaw, the fix belongs upstream, not here — otherwise every clone diverges. Run `git pull` to update.
+**Skills are vendored as-is.** This repo is not a fork. Where a skill has a flaw, the fix belongs upstream — otherwise every clone diverges. Run `git pull` to update.
 
-**`SKILL.md` is the entry point.** Every skill has one. Everything in `references/` is loaded on demand and never sits in the always-on context. That's intentional: 107 skills × full reference material would consume the entire context window before your first message.
+**`SKILL.md` is the entry point.** Every skill has one. Everything in `references/` is loaded on demand and never sits in the always-on context. That's intentional: dozens of skills × full reference material would consume the context window before your first message.
 
 **Descriptions are routing signals.** The `description:` field decides whether a skill loads. It's written as *when to use this*, not *what this is*.
 
-**Docs over code.** If a decision isn't written down, it didn't happen. The `docs/` directory is canonical; `docs/source-material/` holds the raw source text.
+**Docs over code.** If a decision isn't written down, it didn't happen. The `docs/` directory is canonical; `docs/source-material/` holds the sources.
 
 **Markdown only.** No build step, no dependencies, no CI. A skill is a file.
 
@@ -520,15 +476,12 @@ Honest list, so nobody spends an afternoon on them.
 
 | Quirk | Impact | Workaround |
 | --- | --- | --- |
-| **Four frontend skills claim "build me a website"** — `elite-frontend-dev`, `high-front-end`, `awwwards`, `ui-ux-pro-max` | The model picks one arbitrarily | Name the skill explicitly: *"use `high-front-end` only"* |
-| **`spec-driven-dev` references two files that don't exist** (`references/examples.md`, `references/package-template.md`) | Broken reference, not a broken skill | The skill still runs; see `docs/04-product-documents.md` for the 9-file structure |
-| **Folder names differ from frontmatter `name:`** — `backend-mastery` → `backend-testing-mastery`, `high-front-end` → `cinematic-3d-web` | Cosmetic only | The skill ID comes from the path, so both names work |
-| **`ui-ux-pro-max` hardcodes `~/.opencode/skills/...` paths** and asserts React Native is the stack | Wrong paths on this layout | Use it for the pattern database, not the file paths |
-| **`skill-creator` contains placeholder text** | Low quality guidance | Prefer the method in [`docs/03-skill-files.md`](docs/03-skill-files.md) |
-| **`spec-driven-dev/SKILL-coding-assist.md` has no frontmatter** | Undiscoverable by the model | Read it directly; it's a strong 700-line engineering-rules doc |
-| **`template-skill` description is literally placeholder text** | It is a template, by design | Ignore it in normal use |
-
-Fixing any of these means forking the skills, which contradicts "push as-is". Left as documentation instead.
+| **`spec-driven-dev` references two files that may not exist in every checkout** (`references/examples.md`, `references/package-template.md` — this repo ships both at `skills/spec-driven-dev/`) | Broken reference, not a broken skill | The skill still runs; see [`docs/04-product-documents.md`](docs/04-product-documents.md) for the 9-file structure |
+| **Folder names differ from frontmatter `name:`** — `backend-mastery` → `backend-testing-mastery` | Cosmetic only | The skill ID comes from the path, so both names work |
+| **`ui-ux-pro-max` hardcodes `~/.opencode/skills/...` paths** and asserts React Native is the stack | Wrong paths outside that layout | Use it for the pattern database, not the file paths; override explicitly in your prompt |
+| **`spec-driven-dev/SKILL-coding-assist.md` has no frontmatter** | Undiscoverable by the model | Read it directly; it's a strong engineering-rules doc |
+| **`template-skill` description is placeholder text** | It is a template, by design | Ignore it in normal use — it exists to spawn new skills |
+| **Third-party skills with no license were removed** (24 uncredited, 4 Anthropic ToS doc skills) | This repo is public; unlicensed skills may not be redistributed | Fetch them at install time from upstream — see [Notices](THIRD_PARTY_NOTICES.md) |
 
 ---
 
@@ -543,17 +496,28 @@ Restart the harness — skills are re-read at startup. Because every tool points
 
 To add a skill: create `skills/<new-skill>/SKILL.md` with `name`, `description`, and `version` frontmatter, then follow [`docs/03-skill-files.md`](docs/03-skill-files.md). Keep the description trigger-first, and keep the body short — every rule dilutes the others.
 
+When you add or remove a skill, update [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) in the same commit.
+
 ---
 
-## Licence and provenance
+## Licence
 
-Everything third-party is inventoried in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md): 9 skills on Apache License 2.0, 4 proprietary Anthropic document skills (all rights reserved), 66 Jeffallan skills with no license recorded (all rights reserved, private internal use), 28 uncredited skills (all rights reserved), and 26 SIL-OFL fonts bundled in `canvas-design`.
+This repository's own content (README, docs, AGENTS.md, the method, and the harness) is MIT-licensed — see [`LICENSE`](LICENSE).
 
-Short version:
+Third-party skills and fonts retain their own licences, all inventoried in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md):
 
-- Licensed files in the repo (`LICENSE.txt`, `*-OFL.txt`) are part of the goods — keep them, don't edit them.
-- Execution of this repo inside your organisation is fine.
-- **Do not redistribute this repo publicly as-is.** The unlicensed majority does not grant redistribution rights.
-- Fix licence hygiene up front if you want this public: see Section E of the notices file.
+- 9 Apache License 2.0 skills
+- 67 MIT-licensed skills (66 from [Jeffallan's claude-skills](https://github.com/Jeffallan/claude-skills), 1 from [ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill))
+- 26 SIL Open Font License 1.1 fonts bundled inside `canvas-design`
+- 3 harness-authored skills (`spec-driven-dev`, `backend-mastery`, `template-skill`)
+- **Removed:** 24 uncredited skills and 4 Anthropic ToS-governed document skills — not removed because they are bad, but because this repo is public and none of them granted redistribution rights. Install them from upstream instead: `npx skills add <owner/repo> --skill <name>` or via [skills.sh](https://skills.sh).
 
-The method documents in `docs/` and `AGENTS.md` were written for this harness.
+Keep `LICENSE`, the `*-OFL.txt` files, and `THIRD_PARTY_NOTICES.md` unchanged in forks.
+
+---
+
+## Contributing
+
+Pull requests welcome for: docs corrections, new first-party skills (with sources noted in their frontmatter), and attribution fixes.
+
+Not welcome: re-adding unlicensed third-party skills to this repository. Vendoring unlicensed content into a public harness is the one thing that is never fixable retroactively.

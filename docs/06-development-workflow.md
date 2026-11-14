@@ -82,7 +82,7 @@ See [`08-architecture-review.md`](08-architecture-review.md) for the question se
 - [ ] Loading states
 - [ ] Empty states
 
-**Skills:** `elite-frontend-dev`, `high-front-end`, `awwwards`, `canvas-design`
+**Skills (as shipped in this repo):** `ui-ux-pro-max` for design intelligence, `canvas-design` for static art and posters. For an award-level site build, install an upstream "awwwards"-style skill from the skills marketplace — this repo ships no frontier-design skill, by design (see [Licence](../THIRD_PARTY_NOTICES.md)).
 
 > Error, loading, and empty states are not polish. They are the product for anyone on a slow connection, a bad network, or an empty account.
 
@@ -161,7 +161,7 @@ See [`08-architecture-review.md`](08-architecture-review.md) for the question se
 - [ ] Improve naming
 - [ ] Verify architectural consistency
 
-**Skills:** `code-reviewer`, `staff-engineer-review`, `karpathy-guidelines`
+**Skills:** `code-reviewer`
 
 ---
 
@@ -193,7 +193,7 @@ See [`08-architecture-review.md`](08-architecture-review.md) for the question se
 - [ ] Environment variable check
 - [ ] Dependency vulnerability scan
 
-**Skills:** `security-reviewer`, `code-security-auditor`, `secure-code-guardian`
+**Skills:** `security-reviewer`, `secure-code-guardian`
 
 ---
 
@@ -207,7 +207,7 @@ See [`08-architecture-review.md`](08-architecture-review.md) for the question se
 - [ ] Format code
 - [ ] Final lint
 
-**Skills:** `code-reviewer`, `karpathy-guidelines`
+**Skills:** `code-reviewer`
 
 ---
 
@@ -220,7 +220,7 @@ See [`08-architecture-review.md`](08-architecture-review.md) for the question se
 - [ ] Architecture overview
 - [ ] Deployment instructions
 
-**Skills:** `readme-generator`, `code-documenter`
+**Skills:** `code-documenter`
 
 ---
 
@@ -231,7 +231,7 @@ See [`08-architecture-review.md`](08-architecture-review.md) for the question se
 - [ ] Tag releases
 - [ ] Merge cleanly
 
-**Skills:** `changelog-generator`
+**Practice:** commit by feature, meaningful messages, tag releases, merge cleanly. No skill is needed here — it's discipline.
 
 ---
 
@@ -298,4 +298,4 @@ For the short version of the same pipeline, see the [repo README](../README.md#t
 
 ---
 
-*Structured from the original `AI_Assisted_Production_Development_Workflow` source.*
+*Structured from `ai-assisted-production-development-workflow.md`.*

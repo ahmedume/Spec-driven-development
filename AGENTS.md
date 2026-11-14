@@ -1,8 +1,10 @@
 # AGENTS.md
 
-This repository is a portable AI coding harness: **107 skills** plus a written method.
+This repository is a portable AI coding harness: **79 skills** plus a written method.
 
 Copy this file to any project that should inherit the standard, or point your harness's skills directory at `skills/`. Setup is in [`README.md`](README.md#install).
+
+> Audience: any developer cloning this repo and wiring it into their agent setup. Nothing here assumes a specific machine or person.
 
 ---
 

@@ -149,8 +149,8 @@ Everything else just needs the clone's `skills/` directory linked into one of th
 
 Reference material that shouldn't be loaded into context lives beside it in `references/` and is read on demand. That keeps the always-on context small, which is the whole point.
 
-See the [repo README](../README.md) for install and the full 107-skill catalog.
+See the [repo README](../README.md) for install and the full skill catalog.
 
 ---
 
-*Structured from the original `A guide for prompts` document (Section 3).*
+*Structured from `a-guide-for-prompts.md` (Section 3).*

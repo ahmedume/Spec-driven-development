@@ -167,4 +167,4 @@ The failure mode to watch for: **context rot**. As layers accumulate, conflictin
 
 ---
 
-*Structured from the original `A guide for prompts` document (Sections 2–3).*
+*Structured from `a-guide-for-prompts.md` (Sections 2–3).*
