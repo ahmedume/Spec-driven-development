@@ -1,0 +1,22 @@
+* Requirements
+* API contracts
+* Database schema
+* Data flow
+* Security considerations
+* Edge cases
+* Failure modes
+* Testing strategy
+
+
+ Another thing to add is an architecture review phase before coding.
+
+Instead of only asking: explain why you used this.
+
+Also ask:
+
+* What alternatives did you reject?
+* What are the trade-offs?
+* What breaks first under 10,000 users?
+* What’s the weakest part of this architecture?
+* What technical debt did we introduce?
+* If this were an interview, how would I justify every major decision?
