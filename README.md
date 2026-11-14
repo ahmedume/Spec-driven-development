@@ -385,8 +385,7 @@ The design material ships in-repo — no local folders, no machine-specific path
 
 | File | Contents |
 | --- | --- |
-| [`docs/frontend-design-styles.md`](docs/frontend-design-styles.md) | All 44 frontend visual styles, raw A–Z listing |
-| [`docs/frontend-design-styles.md`](docs/frontend-design-styles.md) + [Design section](#the-six-style-families) | The taxonomy: 6 families, motion ratings, skill mapping |
+| [`docs/frontend-design-styles.md`](docs/frontend-design-styles.md) | All 44 frontend visual styles, A–Z listing and families |
 
 The URLs below are public design resources anyone can open; licences and ownership belong to their owners.
 

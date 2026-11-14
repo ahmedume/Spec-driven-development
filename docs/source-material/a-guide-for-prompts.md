@@ -1,4 +1,4 @@
-﻿# a-guide-for-prompts
+# a-guide-for-prompts
 
 > Auto-extracted from the original `A guide for prompts` document. Unstructured source text preserved as-is; tables and multi-column layout land as flat lines with ` | ` separators.
 > The structured, canonical version lives in `01-prompt-engineering.md` at ../docs/01-prompt-engineering.md.
