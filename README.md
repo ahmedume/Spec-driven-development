@@ -1,4 +1,4 @@
-# Spec-Driven Dev Harness
+# Spec-Driven Dev Harness ( Dev note : Ask your agent to configure it for you if you dont wanna do it manually)
 
 A portable AI coding harness: **79 skills**, a written method, and a design reference pack — one clone, and every harness on the machine inherits the same standard.
 
