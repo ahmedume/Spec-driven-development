@@ -43,7 +43,7 @@ This repo is the opposite: **one clone, wired into every harness, and every sess
 ### 1. Clone once
 
 ```bash
-git clone https://github.com/ahmedume/Spec-driven-development.git ~/.config/harness
+git clone https://github.com/ahmedume/Spec-driven-development-final-boss.git ~/.config/harness
 ```
 
 Windows (PowerShell):
