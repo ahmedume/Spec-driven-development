@@ -49,7 +49,7 @@ git clone https://github.com/ahmedume/Spec-driven-development-final-boss.git ~/.
 Windows (PowerShell):
 
 ```powershell
-git clone https://github.com/ahmedume/Spec-driven-development.git "$env:USERPROFILE\.config\harness"
+git clone https://github.com/ahmedume/Spec-driven-development-final-boss.git "$env:USERPROFILE\.config\harness"
 ```
 
 The path is yours to choose — everything below points at `$HARNESS`, so substitute your own.
